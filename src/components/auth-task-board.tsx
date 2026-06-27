@@ -80,18 +80,42 @@ export function AuthTaskBoard() {
               </button>
             </div>
 
-            <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
-              <p style={{ marginBottom: "1rem", fontSize: "0.875rem", color: "#666" }}>
-                O
-              </p>
+            <div className={styles.socialAuth}>
+              <div className={styles.divider}>
+                <span>o continúa con</span>
+              </div>
+
               <button
                 type="button"
-                className={styles.primaryButton}
+                className={styles.googleButton}
                 onClick={auth.onSignInWithGoogle}
                 disabled={auth.isSubmitting}
-                style={{ backgroundColor: "#4285F4" }}
               >
-                {auth.isSubmitting ? "Procesando..." : "Iniciar sesión con Google"}
+                <svg
+                  className={styles.googleIcon}
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="#4285F4"
+                    d="M21.6 12.23c0-.79-.07-1.54-.2-2.27H12v4.3h5.39a4.6 4.6 0 0 1-2 3.01v2.5h3.24c1.9-1.75 2.97-4.33 2.97-7.54Z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.24-2.5c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.58A10 10 0 0 0 12 22Z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M6.41 13.91A6.01 6.01 0 0 1 6.41 10.1V7.52H3.07a10 10 0 0 0 0 12.78l3.34-2.59Z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 6.04c1.47 0 2.79.5 3.83 1.49l2.87-2.87C16.96 2.99 14.7 2 12 2A10 10 0 0 0 3.07 7.52l3.34 2.59C7.2 7.8 9.4 6.04 12 6.04Z"
+                  />
+                </svg>
+                <span>
+                  {auth.isSubmitting ? "Procesando..." : "Sign in with Google"}
+                </span>
               </button>
             </div>
           </form>
